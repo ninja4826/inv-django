@@ -1,0 +1,7 @@
+{% if deleted %}
+    <h1>Item {{ product.mpn }} has been deleted!<h1>
+{% else %}
+    <h1>Item {{ product.mpn }} was not able to be deleted due to an unknown error :(</h1>
+{% endif %}
+
+<a href="/inventory/">Back</a>

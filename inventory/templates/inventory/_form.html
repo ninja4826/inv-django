@@ -1,0 +1,26 @@
+<h1>New product</h1>
+<form action="" method="post">
+  {% csrf_token %}
+  <div class="fieldWrapper">
+    {{ form.location_name.errors }}
+    <strong><label for="{{ form.location_name.id_for_label }}">Location:</label></strong><br>
+    {{ form.location_name }}
+  </div>
+  <div class="fieldWrapper">
+    {{ form.product_name.errors }}
+    <strong><label for="{{ form.product_name.id_for_label }}">Product Name:</label></strong><br>
+    {{ form.product_name }}
+  </div>
+  <div class="fieldWrapper">
+    {{ form.quantity.errors }}
+    <strong><label for="{{ form.quantity.id_for_label }}">Quantity:</label></strong><br>
+    {{ form.quantity }}
+  </div>
+  <div class="fieldWrapper">
+    {{ form.mpn.errors }}
+    <strong><label for="{{ form.mpn.id_for_label }}">MPN:</label></strong><br>
+    {{ form.mpn }}
+    {{ form.location }}
+  </div>
+  <input type="submit" value="Submit" />
+</form>

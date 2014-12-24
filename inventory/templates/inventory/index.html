@@ -1,0 +1,34 @@
+<h1>Listing products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>MPN</th>
+      <th colspan="3"></th>
+    </th>
+  </thead>
+  
+  <tbody>
+    {% if products_list %}
+      {% for product in products_list %}
+        <tr>
+          <td>{{ product.location_name }}</td>
+          <td>{{ product.product_name }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>{{ product.mpn }}</td>
+          <td><a href="/inventory/{{ product.id }}/">Show</a></td>
+          <td><a href="/inventory/{{ product.id }}/delete/">Delete</a></td>
+        </tr>
+      {% endfor %}
+    {% else %}
+      <tr>
+        <td>No products could be found.</td>
+      </tr>
+    {% endif %}
+  </tbody>
+</table>
+
+<a href="/inventory/new/">New Product</a>
